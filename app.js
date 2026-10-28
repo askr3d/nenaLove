@@ -3,6 +3,9 @@ const decor = document.getElementById('decor');
 const BASE_Y = 438;   // punto donde nacen los tallos
 const GROW = 3.2;     // segundos que tardan en crecer los tallos
 
+const gifs = ["kiss_bears.gif", "bear_bow.gif", "bear_hxh.gif", "bear_ilu.gif", "bear_send_kiss.gif"];
+let indiceActual = 0;
+
 
 /* ---------- 4. Botón "Ver Regalo": chispas de corazón + tu contenido ---------- */
 const giftBtn = document.getElementById('giftBtn');
@@ -18,6 +21,8 @@ giftBtn.addEventListener('click', () => {
     recalculateHeartByResizeWindow();
     playBgSong();
     escribirConSaltos();
+    // 5000 milisegundos = 5 segundos por cada GIF
+    setInterval(cambiarGif, 5000);
 
   // Las chispas salen desde el centro del botón
   const r = giftBtn.getBoundingClientRect();
@@ -190,4 +195,11 @@ function escribirConSaltos() {
     // Opcional: quitar el cursor al terminar de escribir
     elemento.style.borderRight = "none";
   }
+}
+
+
+function cambiarGif() {
+    // Avanza al siguiente índice y vuelve al 0 al llegar al final (bucle infinito)
+    indiceActual = (indiceActual + 1) % gifs.length;
+    document.getElementById("gifImg").src = gifs[indiceActual];
 }
