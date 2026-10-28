@@ -1,0 +1,194 @@
+
+body {
+  background: #0f1c20;
+  overflow: hidden;
+}
+
+.wreath {
+    position: relative;
+    width: min(96vw, calc(96vh * 1.217), 1000px); /* se ajusta al alto y ancho de la pantalla */
+    aspect-ratio: 560 / 460;
+    container-type: inline-size; /* permite usar cqw */
+    z-index: 1;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#svg { width: 100%; height: 100%; overflow: visible; margin-top: 4rem; }
+.stem { fill: none; stroke-linecap: round; }
+
+.content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2cqw;
+  padding-top: 4cqw;
+  text-align: center;
+}
+
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 5.4cqw;
+  font-weight: 400;
+  letter-spacing: .02em;
+  color: #f5ff3a;
+}
+
+.subtitle {
+  font-family: 'Courgette', cursive;
+  font-size: 3.9cqw;
+  color: #fff36a;
+}
+
+.btn {
+  margin-top: 1.5cqw;
+  padding: 1.2cqw 4.4cqw;
+  font-family: 'Courgette', cursive;
+  font-size: 3.4cqw;
+  color: #fff;
+  background: #f0246c;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 .8cqw 2cqw rgba(240, 36, 108, .45);
+}
+.btn:hover { filter: brightness(1.12); }
+
+/* Chispas en forma de corazón (las crea el JS al pulsar el botón) */
+.spark {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  line-height: 1;
+  pointer-events: none;
+  will-change: transform, opacity, filter;
+}
+
+/* Div donde va tu contenido */
+.gift-content {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  padding: 4vmin;
+  pointer-events: none;
+}
+.gift-content[hidden] { display: none; }
+
+.gift-box {
+    pointer-events: auto;
+    max-width: min(42vw, 720px);
+    max-height: 88vh;
+    overflow: auto;
+    padding: 28px;
+    text-align: center;
+    color: #fff;
+    border-radius: 24px;
+}
+    .bear_gif{
+        max-width: 200px;
+        margin: 0 auto;
+    }
+        .bear_gif img{
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .typing-box {
+            max-width: 200px;
+            animation: blink 0.75s step-end infinite;
+            font-size: 1.7vh;
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #333; }
+        }
+
+@media(max-width: 600px){
+    .gift-box{
+        margin-top: -10rem;
+    }
+}
+
+.containerHeart{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    opacity: .3;
+}
+.hearts{
+    position: relative;
+    display: inline-flex;
+}
+.hearts span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #fa0089;
+    margin: 0 4px;
+    box-shadow: 0px 0px 50px 30px #fa008944;
+    animation: floatingHeart 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.hearts span::before{
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: #fa0089;
+    top: -50%;
+    border-radius: 30px;
+}
+.hearts span::after{
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: #fa0089;
+    right: -50%;
+    border-radius: 30px;
+}
+
+.hearts span:nth-child(even){
+    background: #fa003e;
+    box-shadow: 0px 0px 40px 30px #fa003e44;
+}
+
+.hearts span:nth-child(even)::before{
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: #fa003e;
+    top: -50%;
+    border-radius: 30px;
+}
+.hearts span:nth-child(even)::after{
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: #fa003e;
+    right: -50%;
+    border-radius: 30px;
+}
+
+@keyframes floatingHeart{
+    0%{
+        transform: translateY(-10vh) rotate(-45deg) scale(1);
+    }
+    100%{
+        transform: translateY(100vh) rotate(-45deg) scale(1);
+    }
+}

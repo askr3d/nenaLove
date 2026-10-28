@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nena Love</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./normalize.css">
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="containerHeart">
+        <div class="hearts" id="heartsContainer"></div>
+    </div>
+
+  <main class="wreath">
+    <svg id="svg" style="display: none;" viewBox="0 0 560 460" aria-hidden="true">
+      <defs>
+        <path id="leafShape" d="M0 0C8-10 26-12 44 0C26 12 8 10 0 0Z"/>
+        <g id="budShape">
+          <path d="M0 0C-9-8-10-22 0-36C10-22 9-8 0 0Z" fill="#ff3d5a"/>
+          <circle cy="-38" r="2.2" fill="#ffd9e2"/>
+        </g>
+        <g id="flowerShape">
+          <path d="M0 0C-24-10-38-40-30-68C-16-54-6-36 0 0Z" fill="#e0245e"/>
+          <path d="M0 0C24-10 38-40 30-68C16-54 6-36 0 0Z" fill="#e0245e"/>
+          <path d="M0 0C-12-20-14-52 0-80C14-52 12-20 0 0Z" fill="#ff4d79"/>
+          <path d="M0 0C-8-14-6-34 0-48C6-34 8-14 0 0Z" fill="#9c27b0" opacity=".85"/>
+          <path d="M0-40L-16-96M0-40L0-104M0-40L16-96" stroke="#ffb3c6" stroke-width="1.2" fill="none"/>
+          <g fill="#ffd9e2"><circle cx="-16" cy="-96" r="2.4"/><circle cy="-104" r="2.4"/><circle cx="16" cy="-96" r="2.4"/></g>
+          <path d="M0 0C-6 6-14 6-18 2C-10 0-4-2 0 0ZM0 0C6 6 14 6 18 2C10 0 4-2 0 0Z" fill="#1fa24a"/>
+        </g>
+      </defs>
+
+      <!-- Mitad izquierda; el JS la clona y la refleja para la derecha -->
+      <g id="half">
+        <path class="stem" stroke="#2fae4f" stroke-width="3"   d="M280 438C178 410 65 360 57 280C51 215 85 170 100 130C110 100 118 70 138 38"/>
+        <path class="stem" stroke="#3ccf63" stroke-width="2.5" d="M280 438C207 395 128 345 126 275C125 207 145 166 150 120"/>
+        <path class="stem" stroke="#b7e03a" stroke-width="2"   d="M274 428C193 424 118 402 71 362C54 346 34 348 31 360C29 370 48 372 54 364"/>
+        <path class="stem" stroke="#b7e03a" stroke-width="2"   d="M266 420C208 402 176 370 179 340C180 326 199 322 203 332"/>
+        <g id="decor"></g>
+      </g>
+    </svg>
+
+    <div class="content">
+      <h1 class="title">¡I LOVE YOU!</h1>
+      <p class="subtitle">Tengo un regalo para mi amor!</p>
+      <button class="btn" id="giftBtn">Ver Regalo</button>
+    </div>
+  </main>
+
+  <!-- Aparece al pulsar "Ver Regalo". Pon tu contenido dentro de .gift-box -->
+  <section class="gift-content" id="giftContent" hidden>
+    <div class="gift-box">
+        <div class="bear_gif">
+            <img src="./kiss_bears.gif" alt="Bears Kissing">
+        </div>
+        <!-- <div class="typing-container">
+            <p class="typing-effect">
+                Eres la persona más maravillosa que he conocido,
+                y cada día a tu lado descubro una razón nueva
+                para agradecerle a la vida por coincidir contigo.
+                Contigo entendí que los lugares favoritos no son un sitio,
+                sino la persona con la que compartes cada momento;
+                eres mi refugio favorito, mi paz y
+                la casualidad más bonita de toda mi vida
+            </p>
+        </div> -->
+        <div id="typed-text" class="typing-box"></div>
+    </div>
+  </section>
+
+  <audio id="bg-song" src="./song.mp3" loop></audio>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
