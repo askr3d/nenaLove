@@ -3,7 +3,7 @@ const decor = document.getElementById('decor');
 const BASE_Y = 438;   // punto donde nacen los tallos
 const GROW = 3.2;     // segundos que tardan en crecer los tallos
 
-const gifs = ["kiss_bears.gif", "bear_bow.gif", "bear_hxh.gif", "bear_ilu.gif", "bear_send_kiss.gif"];
+const gifs = ["kiss_bears.gif", "bear_bow.gif", "bear_hxh.gif", "bear_ilu.gif", "bear_send_kiss.gif", "bear_hugging.gif"];
 let indiceActual = 0;
 
 
