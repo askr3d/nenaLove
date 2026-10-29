@@ -103,7 +103,8 @@ body {
         }
 
         .typing-box {
-            max-width: 200px;
+            width: 100%;
+            max-width: 450px;
             animation: blink 0.75s step-end infinite;
             font-size: 1.7vh;
         }
