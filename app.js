@@ -158,7 +158,7 @@ const startFlowersAnimation = () => {
     .add(() => {
         gsap.fromTo([fl, bd], { rotation: -3 }, {
         rotation: 3, duration: 1.5, ease: 'sine.inOut', yoyo: true, repeat: -1,
-        stagger: { each: .15, from: 'start' }
+        stagger: { each: .012, from: 'start' }
         });
     });
 }
